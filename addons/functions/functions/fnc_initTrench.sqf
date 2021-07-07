@@ -25,11 +25,15 @@ if (is3DEN) exitWith {
 
 if (isServer) then {
    _object setVariable ["ace_trenches_progress", 1, true];
-   _object setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
 
     if (GVAR(allowTrenchDecay)) then {
        [_object, GVAR(timeoutToDecay), GVAR(decayTime)] call FUNC(decayPFH);
     };
+};
+
+// hitpart is local args, so must be applied everywhere
+if (GVAR(allowHitDecay)) then {
+    [QGVAR(hitEHAdd), [_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEventJIP;
 };
 
 

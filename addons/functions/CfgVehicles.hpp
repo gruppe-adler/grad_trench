@@ -138,6 +138,7 @@ class CfgVehicles {
         ace_trenches_removalDuration = QGVAR(smallEnvelopeRemovalTime);
         scopecurator = 2;
         scope = 2;
+        GVAR(damageMultiplier) = QGVAR(smallEnvelopeDamageMultiplier);
 
         class CamouflagePositions1 {};
 
@@ -151,6 +152,7 @@ class CfgVehicles {
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(bigEnvelopeRemovalTime);
         GVAR(offset) = 1.53;
+        GVAR(damageMultiplier) = QGVAR(bigEnvelopeDamageMultiplier);
 
         class CamouflagePositions1 {
             a[] = {0, 0.9, 3.4};
@@ -175,6 +177,7 @@ class CfgVehicles {
         GVAR(offset) = 1.82;
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+        GVAR(damageMultiplier) = QGVAR(giantEnvelopeDamageMultiplier);
 
         class CamouflagePositions1 {
             a[] = {4.4, 0, 3};
@@ -199,6 +202,7 @@ class CfgVehicles {
         GVAR(offset) = 2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+        GVAR(damageMultiplier) = QGVAR(vehicleEnvelopeDamageMultiplier);
 
         class CamouflagePositions1 {
             a[] = {3.9, 2.5, 3.5};
@@ -222,6 +226,7 @@ class CfgVehicles {
         GVAR(offset) = 1.2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+        GVAR(damageMultiplier) = QGVAR(shortEnvelopeDamageMultiplier);
 
         class CamouflagePositions1 {
             a[] = {1.7, 0.7, 3.1};

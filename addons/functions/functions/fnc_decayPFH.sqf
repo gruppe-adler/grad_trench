@@ -65,18 +65,7 @@ if (isNil QGVAR(decayPFH)) then {
 						) then {
 							deleteVehicle _trench;
 						} else {
-							_trench setVariable ["ace_trenches_progress", _progress];
-
-							private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
-							_placeData params ["", "_vecDirAndUp"];
-
-							private _pos = (getPosWorld _trench);
-							private _offset = [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
-							private _posDiff = _offset / (_decayTimeMax / 10);
-
-							_pos set [2, ((_pos select 2) - _posDiff)];
-							_trench setPosWorld _pos;
-							_trench setVectorDirAndUp _vecDirAndUp;
+							[_trench, _progress, 1] call FUNC(setTrenchProgress);
 
 							_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
 						};

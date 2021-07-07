@@ -38,12 +38,6 @@ if (_diggerCount > 0 && {!(_switchingDigger)}) exitWith {
 };
 
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
-private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
-_placeData params ["", "_vecDirAndUp"];
-
-if (isNil "_vecDirAndUp" && {_vecDirAndUp isEqualTo []}) then {
-    _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
-};
 
 _trench setVariable [QGVAR(diggers), [_unit], true];
 
@@ -53,10 +47,7 @@ private _fnc_onFinish = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
-
-    private _pos = _trench getVariable [QGVAR(endPos), []];
-    _trench setPosWorld _pos;
+    [QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
@@ -69,7 +60,7 @@ private _fnc_onFailure = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -103,7 +94,10 @@ if (_actualProgress == 0) then {
 
 [{
     params ["_args", "_handle"];
-    _args params ["_trench", "_unit", "_digTime", "_vecDirAndUp"];
+    _args params ["_trench", "_unit", "_digTime"];
+    
+    private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
+    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
     
     if (
         !(_trench getVariable ["ace_trenches_digging", false]) ||
@@ -111,32 +105,23 @@ if (_actualProgress == 0) then {
     ) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+        [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
     };
 
     if (_actualProgress >= 1) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
-    private _animationPhase = _trench animationSourcePhase "rise";
-    private _diff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_digTime*10))]) * _diggerCount;
-    
-    _trench animateSource ["rise", _animationPhase + _diff, true];
-    _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10) * _diggerCount, true];
+    private _newProgress =  _actualProgress + ((1/_digTime)) * _diggerCount;
 
-    //Fatigue impact
-    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
-    ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((2 * GVAR(buildFatigueFactor))/2000)) min 0.8;
+    [_trench, _newProgress, 1.5] call FUNC(setTrenchProgress); // not too fast so animation is still visible
+    [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
+    [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
 
-    if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-        _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-        _unit setVariable [QGVAR(diggingTrench), false];
-    };
-}, 0.1, [_trench, _unit, _digTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
+    private _sound = str (selectRandom [1,2,3,4,5,6,7]);
+    playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
+
+}, 1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);

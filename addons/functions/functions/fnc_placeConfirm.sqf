@@ -34,29 +34,13 @@ _unit setVariable ["ace_trenches_isPlacing", false, true];
 // Delete placement dummy and create real trench
 if (isNull ace_trenches_trench) exitWith {};
 
-//Get the placment data and other importen values from the preview trench
+//Get the placment data and other important values from the preview trench
 private _trenchClass = typeOf ace_trenches_trench;
 private _posDiff = [configFile >> "CfgVehicles" >> _trenchClass >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 private _pos = ace_trenches_trench modelToWorldWorld [0,0,0];
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 
-//Delete prieview trench
+//Delete preview trench
 deleteVehicle ace_trenches_trench;
 
-//Create a new trench, that is globaly visible
-private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
-private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
-
-_trench setObjectTextureGlobal [0, surfaceTexture _pos];
-
-_trench setVariable [QGVAR(endPos), -_posDiff, true];
-_trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
-_trench setVectorDirAndUp _vecDirAndUp;
-if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(createTrenchMarker)};
-
-_trench setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
-_trench setVariable ["ace_trenches_progress", 0, true];
-
-[QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
-
-[_trench, _unit, false] call FUNC(continueDiggingTrench);
+[QGVAR(spawnTrench), [_trenchClass, _posDiff, _pos, _vecDirAndUp, _unit]] call CBA_fnc_serverEvent;

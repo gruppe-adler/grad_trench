@@ -38,7 +38,7 @@ GVAR(currentSurface) = "";
 
 _trench setPos (getPos _unit vectorAdd [0,2,0]);
 
-// pfh that runs while the dig is in progress
+// pfh that runs while placement is in progress (before actual digging)
 
 ace_trenches_digPFH = [{
     (_this select 0) params ["_unit", "_trench"];

@@ -247,76 +247,76 @@
             <English>Create map markers for player-dug trenches, but only for the digger's side or any friendly side.</English>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
-            <English>Dig time (in seconds) for short envelope trenches</English>
-            <German>Zeit (in Sekunden) um kurze Grabene Gräben zu graben</German>
+            <English>Dig time (s) for short envelope trenches</English>
+            <German>Zeit (s) um kurze Grabene Gräben zu graben</German>
             <Russian>Время (в секундах) копания короткого окопа</Russian>
-            <French>Temps d'excavation (en secondes) pour les tranchées individuelles</French>
+            <French>Temps d'excavation (s) pour les tranchées individuelles</French>
             <Chinesesimp>挖掘短掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeDigTime">
-            <English>Dig time (in seconds) for small envelope trenches</English>
-            <German>Zeit (in Sekunden) um kleine Grabene Gräben zu graben</German>
+            <English>Dig time (s) for small envelope trenches</English>
+            <German>Zeit (s) um kleine Grabene Gräben zu graben</German>
             <Russian>Время (в секундах) копания малого окопа</Russian>
-            <French>Temps d'excavation (en secondes) pour les petites tranchées</French>
+            <French>Temps d'excavation (s) pour les petites tranchées</French>
             <Chinesesimp>挖掘小型掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeDigTime">
-            <English>Dig time (in seconds) for big envelope trenches</English>
-            <German>Zeit (in Sekunden) um große Grabene Gräben zu graben</German>
+            <English>Dig time (s) for big envelope trenches</English>
+            <German>Zeit (s) um große Grabene Gräben zu graben</German>
             <Russian>Время (в секундах) копания среднего окопа</Russian>
-            <French>Temps d'excavation (en secondes) pour les petites tranchées (meurtrières)</French>
+            <French>Temps d'excavation (s) pour les petites tranchées (meurtrières)</French>
             <Chinesesimp>挖掘大型掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeDigTime">
-            <English>Dig time (in seconds) for giant envelope trenches</English>
-            <German>Zeit (in Sekunden) um riesige Grabene Gräben zu graben</German>
+            <English>Dig time (s) for giant envelope trenches</English>
+            <German>Zeit (s) um riesige Grabene Gräben zu graben</German>
             <Russian>Время (в секундах) копания большого окопа</Russian>
-            <French>Temps d'excavation (en secondes) pour les grandes tranchées (meurtrières)</French>
+            <French>Temps d'excavation (s) pour les grandes tranchées (meurtrières)</French>
             <Chinesesimp>挖掘巨型掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeDigTime">
-            <English>Dig time (in seconds) for vehicle envelope trenches</English>
-            <German>Zeit (in Sekunden) um Grabene Fahrzeuggräben zu graben</German>
+            <English>Dig time (s) for vehicle envelope trenches</English>
+            <German>Zeit (s) um Fahrzeuggräben zu graben</German>
             <Russian>Время (в секундах) копания окопа для техники</Russian>
-            <French>Temps d'excavation (en secondes) pour les tranchées pour véhicule</French>
+            <French>Temps d'excavation (s) pour les tranchées pour véhicule</French>
             <Chinesesimp>挖掘载具掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeDigTime">
-            <English>Dig time (in seconds) for Long envelope trenches</English>
-            <German>Zeit (in Sekunden) um Grabene Waffen Stellungs Gräben zu graben</German>
+            <English>Dig time (s) for Long envelope trenches</English>
+            <German>Zeit (s) um Waffen Stellungs Gräben zu graben</German>
             <Russian>Время (в секундах) копания длинного окопа</Russian>
-            <French>Temps d'excavation (en secondes) pour les grandes tranchées</French>
+            <French>Temps d'excavation (s) pour les grandes tranchées</French>
             <Chinesesimp>挖掘长掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for short envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (in Sekunden) um kurze Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <French>Temps de suppression (en secondes) pour les tranchées individuelles</French>
+            <English>Removal time (s) for short envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (s) um kurze Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <French>Temps de suppression (s) pour les tranchées individuelles</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for small envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (in Sekunden) um kleine Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <French>Temps de suppression (en secondes) pour les petites tranchées</French>
+            <English>Removal time (s) for small envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (s) um kleine Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <French>Temps de suppression (s) pour les petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for big envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (in Sekunden) um große Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <French>Temps de suppression (en secondes) pour les petites tranchées (meurtrières)</French>
+            <English>Removal time (s) for big envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (s) um große Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <French>Temps de suppression (s) pour les petites tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for giant envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (in Sekunden) um riesige Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <French>Temps de suppression (en secondes) pour les grandes tranchées (meurtrières)</French>
+            <English>Removal time (s) for giant envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (s) um riesige Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <French>Temps de suppression (s) pour les grandes tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for vehicle envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (in Sekunden) um Grabene Fahrzeuggräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <French>Temps de suppression (en secondes) pour les tranchées pour véhicule</French>
+            <English>Removal time (s) for vehicle envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (s) um Fahrzeuggräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <French>Temps de suppression (s) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for Long envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (in Sekunden) um Grabene Waffen Stellungs Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <French>Temps de suppression (en secondes) pour les grandes tranchées</French>
+            <English>Removal time (s) for Long envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (s) um Lange Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <French>Temps de suppression (s) pour les grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
             <English>Help digging</English>
@@ -532,6 +532,46 @@
         <Key ID="STR_GRAD_Trenches_functions_decaySubCategory">
             <English>Decay Setting</English>
             <German>Verfall Einstellungen</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_hitDecaySubCategory">
+            <English>Hit Decay</English>
+            <German>Verfall bei Treffer</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_displayName">
+            <English>Allow Decay on Hit</English>
+            <German>Verfall bei Treffer erlauben</German>
+        </Key>
+         <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_tooltip">
+            <English>Hit Damage lets trench sink into ground. HE is most effective.</English>
+            <German>Hit Damage lässt Gräben in den Boden sinken. HE ist am effektivsten.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_displayName">
+            <English>Multiplier for Hit Damage</English>
+            <German>Multiplikator für Trefferschaden</German>
+        </Key>
+         <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_tooltip">
+            <English>Multiplier for Hit Damage</English>
+            <German>Multiplikator für Trefferschaden</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_smallEnvelopeDamageMultiplier">
+            <English>Small Trench Multiplier</English>
+            <German>Multiplikator Kleiner Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_shortEnvelopeDamageMultiplier">
+             <English>Short Trench Multiplier</English>
+            <German>Multiplikator kurzer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_bigEnvelopeDamageMultiplier">
+           <English>Big Trench Multiplier</English>
+            <German>Multiplikator großer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_giantEnvelopeDamageMultiplier">
+            <English>Giant Trench Multiplier</English>
+            <German>Multiplikator Sehr großer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_vehicleEnvelopeDamageMultiplier">
+            <English>Vehicle Trench Multiplier</English>
+            <German>Multiplikator Fahrzeuggraben</German>
         </Key>
     </Package>
 </Project>
